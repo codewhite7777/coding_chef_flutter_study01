@@ -62,14 +62,7 @@ class HomeScreen extends StatelessWidget {
               children: [
                 Expanded(
                   child: ElevatedButton(
-                    onPressed: () {
-                      Fluttertoast.showToast(
-                        msg: 'toast message!',
-                        backgroundColor: Colors.red,
-                        gravity: ToastGravity.BOTTOM,
-                        toastLength: Toast.LENGTH_SHORT,
-                      );
-                    },
+                    onPressed: toastMessage,
                     child: const Text('Toast Message Button'),
                   ),
                 ),
@@ -78,6 +71,15 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+
+  void toastMessage() {
+    Fluttertoast.showToast(
+      msg: 'toast message!',
+      backgroundColor: Colors.red,
+      gravity: ToastGravity.BOTTOM,
+      toastLength: Toast.LENGTH_SHORT,
     );
   }
 }
